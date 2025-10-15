@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: lab-report-analyzer
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    autoDeploy: true
+    envVars:
+      - key: HUGGINGFACE_API_KEY
+        sync: false
+    healthCheckPath: /health
